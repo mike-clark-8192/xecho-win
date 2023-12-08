@@ -20,11 +20,14 @@ if exist "%space_exe%" (
     exit /b 1
 )
 @echo on
-@echo -------[space_exe]-----------
-"%space_exe%" "a b" c
-@echo -------[/space_exe]----------
+@echo -------space_exe-----------
+"%space_exe%" %* "a b" c
+@echo -------/space_exe----------
+@echo off
 
-@echo -------[built_exe]-----------
-"%built_exe%" "a b" c
-@echo -------[/built_exe]----------
 
+@echo on
+@echo -------built_exe-----------
+%built_exe% %* "a b" c
+@echo -------/built_exe----------
+@echo off
